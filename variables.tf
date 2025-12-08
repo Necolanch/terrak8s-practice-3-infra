@@ -1,6 +1,6 @@
 variable "project" {
   type    = string
-  default = "project-plato"
+  default = "terrak8s-practice-3"
 }
 
 variable "environment" {

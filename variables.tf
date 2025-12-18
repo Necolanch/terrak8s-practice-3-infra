@@ -12,3 +12,8 @@ variable "location" {
   type    = string
   default = "East US"
 }
+
+variable "subscriptionId" {
+  type    = string
+  default = ""
+}

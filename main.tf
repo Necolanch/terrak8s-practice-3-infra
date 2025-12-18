@@ -34,7 +34,7 @@ resource "azurerm_service_plan" "asp" {
   resource_group_name = azurerm_resource_group.terrak8s-practice-3-rg.name
   location            = azurerm_resource_group.terrak8s-practice-3-rg.location
   os_type             = "Linux"
-  sku_name            = "F1"
+  sku_name            = "B1"
 }
 
 # Application Insights

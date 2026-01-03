@@ -29,7 +29,7 @@ resource "azurerm_container_registry" "terrak8s-practice-3-container-regsitry" {
 }
 
 # App Service Plan
-resource "azurerm_service_plan" "asp" {
+resource "azurerm_service_plan" "terrak8s-practice-3-asp" {
   name                = "${var.project}-plan"
   resource_group_name = azurerm_resource_group.terrak8s-practice-3-rg.name
   location            = azurerm_resource_group.terrak8s-practice-3-rg.location
@@ -38,7 +38,7 @@ resource "azurerm_service_plan" "asp" {
 }
 
 # Application Insights
-resource "azurerm_application_insights" "appinsights" {
+resource "azurerm_application_insights" "terrak8s-practice-3-appinsights" {
   name                = "${var.project}-logs"
   location            = azurerm_resource_group.terrak8s-practice-3-rg.location
   resource_group_name = azurerm_resource_group.terrak8s-practice-3-rg.name
@@ -46,11 +46,11 @@ resource "azurerm_application_insights" "appinsights" {
 }
 
 # Web App
-resource "azurerm_linux_web_app" "app" {
+resource "azurerm_linux_web_app" "terrak8s-practice-3-app" {
   name                = "${var.project}-app"
   resource_group_name = azurerm_resource_group.terrak8s-practice-3-rg.name
   location            = azurerm_resource_group.terrak8s-practice-3-rg.location
-  service_plan_id     = azurerm_service_plan.asp.id
+  service_plan_id     = azurerm_service_plan.terrak8s-practice-3-asp.id
 
   site_config {
     application_stack {
@@ -60,8 +60,8 @@ resource "azurerm_linux_web_app" "app" {
   }
 
   app_settings = {
-    "APPINSIGHTS_INSTRUMENTATIONKEY"        = azurerm_application_insights.appinsights.instrumentation_key
-    "APPLICATIONINSIGHTS_CONNECTION_STRING" = azurerm_application_insights.appinsights.connection_string
+    "APPINSIGHTS_INSTRUMENTATIONKEY"        = azurerm_application_insights.terrak8s-practice-3-appinsights.instrumentation_key
+    "APPLICATIONINSIGHTS_CONNECTION_STRING" = azurerm_application_insights.terrak8s-practice-3-appinsights.connection_string
     "WEBSITES_ENABLE_APP_SERVICE_STORAGE"   = "false"
   }
 

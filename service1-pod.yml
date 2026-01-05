@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: terrak8s-practice-3-service1
+spec:
+  imagePullSecrets:
+    - name: acr-pull
+  containers:
+    - name: terrak8s-practice-3-service1
+      image: terrak8spractice3devregistry.azurecr.io/terrak8s-practice-3-service1:0.01
+      ports:
+        - containerPort: 3001

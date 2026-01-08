@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: terrak8s-practice-3-service2
+  labels:
+    app: service2
 spec:
   imagePullSecrets:
     - name: acr-pull

@@ -26,6 +26,7 @@ resource "azurerm_container_registry" "terrak8s-practice-3-container-regsitry" {
   resource_group_name = azurerm_resource_group.terrak8s-practice-3-rg.name
   location            = var.location
   sku                 = "Basic"
+  admin_enabled       = true
 }
 
 # App Service Plan
@@ -34,7 +35,7 @@ resource "azurerm_service_plan" "terrak8s-practice-3-asp" {
   resource_group_name = azurerm_resource_group.terrak8s-practice-3-rg.name
   location            = azurerm_resource_group.terrak8s-practice-3-rg.location
   os_type             = "Linux"
-  sku_name            = "B1"
+  sku_name            = "F1"
 }
 
 # Application Insights

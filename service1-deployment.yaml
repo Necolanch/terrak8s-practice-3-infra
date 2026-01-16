@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: service1
+  template:
+    metadata:
+      labels:
+        app: service1
+    spec:
+      imagePullSecrets:
+        - name: acr-pull
+      containers:
+        - name: service1
+          image: terrak8spractice3devregistry.azurecr.io/terrak8s-practice-3-service1:0.01
+          ports:
+            - containerPort: 3001

@@ -1,0 +1,31 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: app-routes
+  namespace: default
+spec:
+  hosts:
+    - "*"
+  gateways:
+    - app-gateway
+  http:
+    - match:
+        - uri:
+            prefix: /service1
+      rewrite:
+        uri: /
+      route:
+        - destination:
+            host: terrak8s-practice-3-service1-clusterip
+            port:
+              number: 80
+    - match:
+        - uri:
+            prefix: /service2
+      rewrite:
+        uri: /
+      route:
+        - destination:
+            host: service2
+            port:
+              number: 80

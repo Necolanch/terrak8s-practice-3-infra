@@ -1,0 +1,10 @@
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: mutual-mtls
+  namespace: default
+spec:
+  host: "*.default.svc.cluster.local" # Apply to all services in default namespace
+  trafficPolicy:
+    tls:
+      mode: DISABLE

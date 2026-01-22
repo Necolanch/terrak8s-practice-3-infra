@@ -26,6 +26,6 @@ spec:
         uri: /
       route:
         - destination:
-            host: service2
+            host: terrak8s-practice-3-service2-clusterip
             port:
               number: 80

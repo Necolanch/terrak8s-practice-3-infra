@@ -16,6 +16,6 @@ spec:
         - name: acr-pull
       containers:
         - name: service2
-          image: terrak8spractice3devregistry.azurecr.io/terrak8s-practice-3-service2:0.01
+          image: terrak8spractice3devregistry.azurecr.io/terrak8s-practice-3-service2:0.02
           ports:
             - containerPort: 3002

@@ -21,7 +21,7 @@ spec:
               number: 80
     - match:
         - uri:
-            prefix: /service2
+            prefix: /service2/
       rewrite:
         uri: /
       route:

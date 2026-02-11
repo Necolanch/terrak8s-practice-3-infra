@@ -21,6 +21,16 @@ spec:
               number: 80
     - match:
         - uri:
+            exact: /service2
+      rewrite:
+        uri: /
+      route:
+        - destination:
+            host: terrak8s-practice-3-service2-clusterip
+            port:
+              number: 80
+    - match:
+        - uri:
             prefix: /service2/
       rewrite:
         uri: /

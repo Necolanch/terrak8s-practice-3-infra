@@ -21,4 +21,4 @@ spec:
     #    mode: SIMPLE
     #    credentialName: api-tls-secret # TLS certificate
     #  hosts:
-    #    - "localhost"
+    #    - "*"
